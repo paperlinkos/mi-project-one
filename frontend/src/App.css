@@ -1,0 +1,41 @@
+.app-shell { min-height: 100vh; padding: 18px 20px 32px; }
+.app-main { max-width: 1240px; width: 100%; margin: 18px auto 0; flex: 1; }
+.terminal-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(340px, .75fr); gap: 14px; }
+.terminal-panel { background: rgba(9, 15, 13, .92); border: 1px solid var(--border-subtle); border-radius: 4px; box-shadow: 0 18px 60px rgba(0,0,0,.22); }
+.terminal-panel::before { content: ''; display: block; height: 2px; background: linear-gradient(90deg, var(--accent-green), transparent 34%); opacity: .75; }
+.terminal-lobby { max-width: 1020px; margin: clamp(28px, 8vh, 88px) auto; padding: 0 20px; }
+.terminal-lobby__header { display: flex; justify-content: space-between; gap: 20px; border-bottom: 1px solid var(--border-subtle); padding: 20px 0 18px; }
+.terminal-kicker, .terminal-label { color: var(--accent-green); font: 700 .72rem/1 var(--font-mono); letter-spacing: .12em; text-transform: uppercase; }
+.terminal-title { margin: 12px 0 8px; font: 500 clamp(1.7rem, 4vw, 3rem)/1.1 var(--font-mono); letter-spacing: -.06em; color: var(--text-primary); }
+.terminal-cursor { color: var(--accent-green); animation: terminal-blink 1s step-end infinite; }
+.terminal-copy { max-width: 600px; color: var(--text-secondary); font-size: .93rem; }
+.terminal-status { align-self: flex-start; white-space: nowrap; color: var(--accent-green); font: .72rem var(--font-mono); border: 1px solid rgba(123, 255, 183, .3); padding: 8px 10px; }
+.terminal-status::before { content: '●'; margin-right: 7px; }
+.terminal-body { display: grid; grid-template-columns: 1.15fr .85fr; }
+.terminal-section { padding: 26px; }
+.terminal-section + .terminal-section { border-left: 1px solid var(--border-subtle); }
+.terminal-section h2 { margin: 7px 0 5px; font: 500 1rem var(--font-mono); }
+.terminal-section p { color: var(--text-secondary); font-size: .8rem; }
+.terminal-form { display: grid; gap: 17px; margin-top: 22px; }
+.terminal-field { display: grid; gap: 8px; }
+.terminal-input, .terminal-select { width: 100%; background: #050807; border: 1px solid #26362d; border-radius: 2px; color: var(--text-primary); padding: 12px; outline: none; font: .8rem var(--font-mono); }
+.terminal-input:focus, .terminal-select:focus { border-color: var(--accent-green); box-shadow: 0 0 0 3px rgba(123,255,183,.08); }
+.terminal-input::placeholder { color: #68766e; }
+.terminal-input-row { display: flex; gap: 8px; }
+.terminal-ttl { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+.terminal-ttl button { cursor: pointer; text-align: left; background: transparent; color: var(--text-secondary); border: 1px solid #26362d; padding: 10px; font: .7rem var(--font-mono); }
+.terminal-ttl button.active, .terminal-ttl button:hover { color: var(--accent-green); border-color: var(--accent-green); background: rgba(123,255,183,.06); }
+.terminal-ttl small { display: block; opacity: .65; margin-top: 4px; }
+.terminal-burn { display: flex; align-items: center; gap: 9px; color: var(--text-secondary); font-size: .78rem; }
+.terminal-burn input { accent-color: var(--accent-green); }
+.terminal-action { width: 100%; justify-content: flex-start; padding: 13px 15px; border-radius: 2px; background: var(--accent-green); color: #07100b; box-shadow: none; }
+.terminal-action::before { content: '>_'; margin-right: 8px; font-family: var(--font-mono); }
+.terminal-action:hover { background: #d0ffe0; box-shadow: none; }
+.terminal-error { color: #ff8499; border: 1px solid rgba(255,82,119,.4); padding: 10px; font: .75rem var(--font-mono); }
+.terminal-join { display: grid; gap: 12px; margin-top: 23px; }
+.terminal-notes { margin-top: 24px; border-top: 1px solid var(--border-subtle); padding-top: 18px; color: var(--text-muted); font: .72rem/1.8 var(--font-mono); }
+.terminal-notes span { color: var(--accent-green); }
+.terminal-modal { margin-top: 20px; padding: 18px; border: 1px solid rgba(123,255,183,.4); background: rgba(123,255,183,.05); }
+.terminal-link { overflow-wrap: anywhere; color: var(--accent-green); font: .72rem/1.6 var(--font-mono); margin: 12px 0; }
+@media (max-width: 800px) { .terminal-body, .terminal-grid { grid-template-columns: 1fr; } .terminal-section + .terminal-section { border-left: 0; border-top: 1px solid var(--border-subtle); } .terminal-lobby__header { display: block; } .terminal-status { display: inline-block; margin-top: 15px; } .terminal-ttl { grid-template-columns: repeat(2, 1fr); } .app-shell { padding: 10px; } }
+@keyframes terminal-blink { 50% { opacity: 0; } }
