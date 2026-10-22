@@ -1,0 +1,18 @@
+# Build & dependencies
+target/
+**/target/
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+
+# Environment & local config
+.env
+.env*.local
+
+# Logs and runtime caches
+*.log
+*.sqlite
+.DS_Store
+.idea/
+.vscode/
